@@ -6,26 +6,26 @@ namespace Sinal
     {
         static void Main(string[] args)
         {
-            int n;
-            Console.Write("Digite um número:");
-            n=Convert.ToInt32(Console.ReadLine());
+            double num, den, div;
 
-             if (n < 0)
-            {
-                Console.ForegroundColor=ConsoleColor.DarkRed;
-                Console.WriteLine("Negativo");
-                Console.ResetColor();
+            Console.Write("Digite o numerador:");
+            num = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Digite o denominador:");
+            den = Convert.ToDouble(Console.ReadLine());
 
-                }
-            else if (n == 0)
+            div = num / den;
+            if(den == 0)
             {
-                Console.WriteLine("Zero");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("Não é possível dividir por zero");
+            Console.ResetColor();
             }
-            else if (n > 0)
+            else
             {
-                Console.ForegroundColor=ConsoleColor.DarkGreen;
-                Console.WriteLine ("Positivo");
-                Console.ResetColor();
+                Console.WriteLine($"{num} dividido por {den} é {div}");           
+                 
+
+
             }    
         }
     }
